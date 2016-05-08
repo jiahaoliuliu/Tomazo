@@ -12,7 +12,7 @@ import android.widget.ListView;
 public class MainActivity extends AppCompatActivity {
 
     // List of restaurants
-    private String[] mRestaurants = {"Al Soor", "Avec...", "Vapiano", "Khan Chacha", "Abu Shagara", "Nayaab Haandi", "Rajasthan Al Malaki",
+    private String[] mRestaurants = {"The big circle", "Al Soor", "Avec...", "Vapiano", "Khan Chacha", "Abu Shagara", "Nayaab Haandi", "Rajasthan Al Malaki",
                                     "Grub Shack", "Orient grill", "Makani Restuarant"};
 
     private ListView mRestaurantsList;
