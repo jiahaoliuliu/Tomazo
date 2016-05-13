@@ -9,6 +9,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.jiahaoliuliu.tomazo.model.Restaurant;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     // List of restaurants
@@ -29,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
         mRestaurantsList = (ListView) findViewById(R.id.restaurants_list);
 
         // Defines a new adapter
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, mRestaurants);
+        RestaurantsAdapter restaurantsAdapter = new RestaurantsAdapter(mContext, R.layout.restaurant_row, generateRestaurantsList());
+        mRestaurantsList.setAdapter(restaurantsAdapter);
 
-        mRestaurantsList.setAdapter(adapter);
         mRestaurantsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -39,5 +44,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(startRestaurantDetailsIntent);
             }
         });
+    }
+
+    private List<Restaurant> generateRestaurantsList() {
+        List<Restaurant> restaurantsList = new ArrayList<>();
+        for (String restaurantName : mRestaurants) {
+            Restaurant restaurant = new Restaurant(restaurantName, 0);
+            restaurantsList.add(restaurant);
+        }
+
+        return restaurantsList;
     }
 }
