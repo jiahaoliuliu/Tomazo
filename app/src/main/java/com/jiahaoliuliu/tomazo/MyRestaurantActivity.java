@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MyRestaurantActivity extends AppCompatActivity {
 
     // Views
     private TextView mTitle;
