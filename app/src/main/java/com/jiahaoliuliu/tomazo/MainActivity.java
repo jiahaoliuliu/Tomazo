@@ -12,8 +12,12 @@ import android.widget.ListView;
 public class MainActivity extends AppCompatActivity {
 
     // List of restaurants
-    private String[] mRestaurants = {"The big circle", "Al Soor", "Avec...", "Vapiano", "Khan Chacha", "Abu Shagara", "Nayaab Haandi", "Rajasthan Al Malaki",
-                                    "Grub Shack", "Orient grill", "Makani Restuarant"};
+    private String[] mRestaurants = {"The big circle", "Al Soor", "Avec...", "Vapiano", "Khan Chacha", "Abu Shagara",
+                                     "Nayaab Haandi", "Rajasthan Al Malaki", "Grub Shack", "Orient grill", "Makani Restuarant"};
+
+    // List of images
+    private int[] mRestaurantsImage = {R.drawable.the_big_circle, R.drawable.al_soor, R.drawable.avec, R.drawable.vapiano, R.drawable.khan_chacha, R.drawable.abu_shagara,
+                                       R.drawable.nayaab_haandi, R.drawable.rajasthan_al_malaki, R.drawable.grub_shack, R.drawable.orient_grill, R.drawable.makani_restaurant};
 
     private ListView mRestaurantsList;
 
@@ -34,8 +38,10 @@ public class MainActivity extends AppCompatActivity {
         mRestaurantsList.setAdapter(adapter);
         mRestaurantsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Intent startRestaurantDetailsIntent = new Intent(mContext, RestaurantDetailsActivity.class);
+                startRestaurantDetailsIntent.putExtra("restaurantName",mRestaurants[position]);
+                startRestaurantDetailsIntent.putExtra("restaurantImage", mRestaurantsImage[position]);
                 startActivity(startRestaurantDetailsIntent);
             }
         });
