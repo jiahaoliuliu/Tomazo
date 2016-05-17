@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+public class MyRestaurantActivity extends AppCompatActivity {
 
     // List of restaurants
     private String[] mRestaurants = {"The big circle", "Al Soor", "Avec...", "Vapiano", "Khan Chacha", "Abu Shagara", "Nayaab Haandi", "Rajasthan Al Malaki",
