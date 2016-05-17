@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+public class RestaurantsListActivity extends AppCompatActivity {
 
     // List of restaurants
     private String[] mRestaurants = {"The big circle", "Al Soor", "Avec...", "Vapiano", "Khan Chacha", "Abu Shagara",
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_restaurants_list);
 
         mContext = this;
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         mRestaurantsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Intent startRestaurantDetailsIntent = new Intent(mContext, RestaurantDetailsActivity.class);
+                Intent startRestaurantDetailsIntent = new Intent(mContext, MyRestaurantActivity.class);
                 startRestaurantDetailsIntent.putExtra("restaurantName",mRestaurants[position]);
                 startRestaurantDetailsIntent.putExtra("restaurantImage", mRestaurantsImage[position]);
                 startActivity(startRestaurantDetailsIntent);
