@@ -29,28 +29,5 @@
             android:src="@drawable/the_big_circle"
             android:adjustViewBounds="true"
             />
-
-        <ImageView
-            android:id="@+id/image2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/fish_hut_2"
-            android:adjustViewBounds="true"
-            />
-
-        <ImageView
-            android:id="@+id/image3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/fish_hut_3"
-            android:adjustViewBounds="true"
-            />
-
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="The big circle is a chinese restaurant in dubai. serves very traditional chinese food"
-            />
     </LinearLayout>
 </ScrollView>

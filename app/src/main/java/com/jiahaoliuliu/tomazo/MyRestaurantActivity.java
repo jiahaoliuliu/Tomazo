@@ -1,5 +1,6 @@
 package com.jiahaoliuliu.tomazo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -25,12 +26,15 @@ public class MyRestaurantActivity extends AppCompatActivity {
         // Link the view
         mTitle = (TextView) findViewById(R.id.title);
         mImage = (ImageView) findViewById(R.id.image);
-        mDescription = (TextView) findViewById(R.id.description);
 
         // Change the values
-        mTitle.setText("The fish hut");
-        mImage.setImageDrawable(getResources().getDrawable(R.drawable.fish_hut));
-        mDescription.setText("The fish hut is a really good restaurant");
+        Intent intent = getIntent();
+
+        String restaurantName = intent.getStringExtra("restaurantName");
+        mTitle.setText(restaurantName);
+
+        int imageId = intent.getIntExtra("restaurantImage", 0);
+        mImage.setImageDrawable(getResources().getDrawable(imageId));
     }
 
     @Override
