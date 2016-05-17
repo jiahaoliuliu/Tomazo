@@ -13,6 +13,7 @@
 
     <!-- Title -->
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="The big circle"
@@ -21,6 +22,7 @@
         />
 
     <ImageView
+        android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/the_big_circle"
@@ -28,6 +30,7 @@
         />
 
     <TextView
+        android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="The big circle is a chinese restaurant in dubai. serves very traditional chinese food"
